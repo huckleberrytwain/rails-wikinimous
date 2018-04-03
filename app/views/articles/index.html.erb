@@ -1,0 +1,11 @@
+<div class="banner">
+  <h2><%= link_to "Wikinimous", articles_path %></h2>
+  <p><%= link_to "New article", new_article_path %></p>
+</div>
+<div class="articles text-center">
+  <% @articles.each do |a| %>
+  <h2> <%= link_to a.title, article_path(a) %></h2>
+  <%= a.content %>
+  <% end %>
+</div>
+

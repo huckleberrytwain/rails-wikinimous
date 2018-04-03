@@ -1,0 +1,21 @@
+<div class="banner">
+  <h2><%= link_to "Wikinimous", articles_path %></h2>
+  <p><%= link_to "New article", new_article_path %></p>
+</div>
+<div class="show text-center">
+  <h2> <%= @article.title %> </h2><%= link_to edit_article_path(@article) do %>
+  <i class="fas fa-edit"></i>
+  <% end %>
+  <%= link_to destroy_path(@article.id),
+          method: :delete,
+          data: { confirm: "Are you sure?" } do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
+  <p> <%= 20.times do  %>
+   <%= @article.content %>
+  <% end %>
+  <div class="image"><img src="https://picsum.photos/500/300/?random" alt=""></div>
+  <p> <%= 50.times do  %>
+   <%= @article.content %>
+  <% end %>
+</div>
